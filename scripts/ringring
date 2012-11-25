@@ -18,6 +18,7 @@ class Usage(Exception):
 def ring(number, device):
     port = serial.Serial(device, 9600)
     port.write(number)
+    port.flush()
     port.close()
 
 def main():
